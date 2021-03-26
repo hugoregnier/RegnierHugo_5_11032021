@@ -1,19 +1,35 @@
 .navbar a {
     color: white;
 }
+#content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2%;
+    margin-bottom: 60px;
+}
+h1 {
+    text-align: center;
+}
 
 .card {
-    width: 200px;
+    width: 400px;
     margin: 10px;
     border: solid 1px;
+    
+    cursor: pointer;
+}
+.card:hover {
+    box-shadow: 3px 5px 20px #555;
 }
 
 .card img {
     width: 100%;
 }
-
-ion-button {
+.button {
+    height: 50px;
+}
+.price {
     text-align: center;
-    margin: 10px;
-    cursor: pointer;
 }
