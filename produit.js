@@ -1,6 +1,6 @@
 let id = window.location.search.substr(1).split("=")[1];
 console.log(id);
-
+let item;
 
 // let panier = Array();
 let content = document.getElementById('content');
@@ -8,7 +8,7 @@ let content = document.getElementById('content');
 let request = new XMLHttpRequest();
 request.onreadystatechange = function() {
     if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
-        let item = JSON.parse(this.responseText);     
+         item = JSON.parse(this.responseText);     
 //------------- Création d'éléments  ---------------//
             let card = document.createElement('div');
             card.classList.add("card");
@@ -29,7 +29,7 @@ request.onreadystatechange = function() {
 
             for (let i in item.lenses) {
                 let option = document.createElement('option');
-                option.value = i;
+                // option.value = i;
                 option.innerText = item.lenses[i];
                 select.appendChild(option);
             }
@@ -41,7 +41,10 @@ request.onreadystatechange = function() {
             let button = document.createElement('button');
             button.classList.add("button");
             button.innerText = "Ajouter au Panier";
-            button.addEventListener('click', function() { alert("l'appareil photo " + item.name + " à bien été ajouté au panier")});
+            button.addEventListener('click', function () {
+            addPanier(select);// -------------------je récupère la valeur de select  donc la lense -----------------------//
+            alert("l'appareil photo " + item.name + " à bien été ajouté au panier")});
+            
             console.log(button);
 
 
@@ -63,12 +66,16 @@ request.send();
 
 
 // ------------------- Ajoute le produit dans le panier avec la lentille séléctionné -----------------------//
-
-function addPanier (lenseSelected) {
-    let panier = JSON.parse(localStorage.getItem("panier"));
-    if (panier === null) {
-        panier = [];
-    }
+let panier = JSON.parse(localStorage.getItem("panier"));
+if (!panier) {
+    panier = new Array();
 }
 
 // ------------------- Push le produit dans le local storage -----------------------//
+function addPanier(optique) {
+    item.optique= optique.value;
+    panier.push(item);
+    console.log(panier);
+    localStorage.setItem('panier', JSON.stringify(panier));
+}
+
