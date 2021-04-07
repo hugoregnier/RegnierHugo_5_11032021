@@ -21,6 +21,9 @@ if (!panier) {
         let button = document.createElement('button');
         button.classList.add("button");
         button.innerText = "Supprimer du Panier";
+        button.addEventListener('click', function remove() {
+            product.remove(product.name, product.lenses, product.price);
+        });
 
             name.appendChild(title);
             focale.appendChild(optique);
