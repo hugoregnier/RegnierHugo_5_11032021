@@ -11,7 +11,7 @@ if (!panier) {
         
         let focale = document.getElementById('focale');
         let optique = document.createElement('h2');
-            optique.innerText = product.lenses;
+            optique.innerText = product.optique;
 
         let price = document.getElementById('prix');
         let prix = document.createElement('h2');
@@ -21,8 +21,11 @@ if (!panier) {
         let button = document.createElement('button');
         button.classList.add("button");
         button.innerText = "Supprimer du Panier";
-        button.addEventListener('click', function remove() {
-            product.remove(product.name, product.lenses, product.price);
+        button.addEventListener('click', function () {
+           name.removeChild(title);
+           focale.removeChild(optique);
+           price.removeChild(prix);
+           supprime.removeChild(button);
         });
 
             name.appendChild(title);
