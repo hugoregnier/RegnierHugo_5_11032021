@@ -1,5 +1,5 @@
 // let panier = Array();
-let content = document.getElementById('content');
+
 // --------Requête pour l'API---------------//
 let request = new XMLHttpRequest();
 request.onreadystatechange = function() {
@@ -8,6 +8,8 @@ request.onreadystatechange = function() {
 //------------- Boucle sur la réponse de l'api ---------------//
         for(let item of response){ 
 //------------- Création d'éléments  ---------------//
+            let content = document.getElementById('content');
+
             let card = document.createElement('div');
             card.classList.add("card");
             // card.addEventListener('click', function() { alert(item.name)});
@@ -18,7 +20,7 @@ request.onreadystatechange = function() {
             let img = document.createElement('img');
             img.src = item.imageUrl;
             img.addEventListener('click', function() {
-                document.location.href='/produit.html?id='+item._id;
+                document.location.href='produit.html?id='+item._id;
             })
 
             let description = document.createElement('p');
@@ -36,7 +38,7 @@ request.onreadystatechange = function() {
             card.appendChild(description);
             // card.appendChild(button);
             card.appendChild(price);
-            //console.log(item);
+            console.log(item);
         }
 // -------------------Début - Version Fabiche ! -----------------------//
 // for(let item of response){

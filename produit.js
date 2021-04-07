@@ -3,13 +3,15 @@ console.log(id);
 let item;
 
 // let panier = Array();
-let content = document.getElementById('content');
+
 // --------Requête pour l'API---------------//
 let request = new XMLHttpRequest();
 request.onreadystatechange = function() {
     if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
          item = JSON.parse(this.responseText);     
 //------------- Création d'éléments  ---------------//
+            let content = document.getElementById('content');
+            
             let card = document.createElement('div');
             card.classList.add("card");
             // card.addEventListener('click', function() { alert(item.name)});

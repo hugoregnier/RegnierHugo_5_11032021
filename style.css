@@ -33,3 +33,14 @@ h1 {
 .price {
     text-align: center;
 }
+.titlePanier {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-decoration: underline 3px violet;
+}
+.productPanier {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
