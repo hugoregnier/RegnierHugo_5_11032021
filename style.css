@@ -29,6 +29,8 @@ h1 {
 }
 .button {
     height: 50px;
+    border-radius: 25px;
+    background-color: thistle;
 }
 .price {
     text-align: center;
@@ -43,4 +45,20 @@ h1 {
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+#supprimer {
+    display: flex;
+    flex-direction: column;
+}
+.titlePanier > h2 {
+    width: 400px;
+    text-align: center
+}
+.productPanier > div {
+    text-align: center;
+    width: 400px;
+}
+.totalWrapper {
+    border: dashed 2px;
+    margin: 40px;
 }

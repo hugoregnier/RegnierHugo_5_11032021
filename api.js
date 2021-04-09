@@ -1,27 +1,24 @@
-// let panier = Array();
-
 // --------Requête pour l'API---------------//
 let request = new XMLHttpRequest();
-request.onreadystatechange = function() {
+request.onreadystatechange = function () {
     if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
         let response = JSON.parse(this.responseText);
-//------------- Boucle sur la réponse de l'api ---------------//
-        for(let item of response){ 
-//------------- Création d'éléments  ---------------//
+        //------------- Boucle sur la réponse de l'api ---------------//
+        for (let item of response) {
+            //------------- Création d'éléments  ---------------//
             let content = document.getElementById('content');
 
             let card = document.createElement('div');
             card.classList.add("card");
-            // card.addEventListener('click', function() { alert(item.name)});
+            card.addEventListener('click', function () {
+                document.location.href = 'produit.html?id=' + item._id;
+            })
 
             let title = document.createElement('h1');
             title.innerText = item.name;
 
             let img = document.createElement('img');
             img.src = item.imageUrl;
-            img.addEventListener('click', function() {
-                document.location.href='produit.html?id='+item._id;
-            })
 
             let description = document.createElement('p');
             description.innerText = item.description;
@@ -31,7 +28,7 @@ request.onreadystatechange = function() {
             price.innerText = item.price + (' €');
 
 
-// -------------------appendChild à faire dans l'ordre ! -----------------------//
+            // -------------------appendChild à faire dans l'ordre ! -----------------------//
             content.appendChild(card);
             card.appendChild(title);
             card.appendChild(img);
@@ -40,39 +37,39 @@ request.onreadystatechange = function() {
             card.appendChild(price);
             console.log(item);
         }
-// -------------------Début - Version Fabiche ! -----------------------//
-// for(let item of response){
-//     let card = addElem({parent: content, tag: 'div', class:['card']});
+        // -------------------Début - Version Fabiche ! -----------------------//
+        // for(let item of response){
+        //     let card = addElem({parent: content, tag: 'div', class:['card']});
 
-//     addElem({parent: card, tag: 'h1', text: item.name});
-//     addElem({parent: card, tag: 'img', src: item.imageUrl});
-//     addElem({parent: card, tag: 'p', text: item.description});
+        //     addElem({parent: card, tag: 'h1', text: item.name});
+        //     addElem({parent: card, tag: 'img', src: item.imageUrl});
+        //     addElem({parent: card, tag: 'p', text: item.description});
 
-//     let select = addElem({parent: card, tag: 'select', name: 'Optique'});
-//     for (let i in item.lenses) {
-//         addElem({parent: select, tag: 'option', value: item.lenses[i], text: item.lenses[i]});
-//     }
-    
-//     addElem({parent: card, tag: 'div', text: item.price+' €', class:['price']});
-//     addElem({parent: card, tag: 'button', text: "Ajouter au Panier", addPanier: {item, select}});
-// }
-// // x2 car x2 c'est toujours mieux !!!!
-// for(let item of response){
-//     let card = addElem({parent: content, tag: 'div', class:['card']});
+        //     let select = addElem({parent: card, tag: 'select', name: 'Optique'});
+        //     for (let i in item.lenses) {
+        //         addElem({parent: select, tag: 'option', value: item.lenses[i], text: item.lenses[i]});
+        //     }
 
-//     addElem({parent: card, tag: 'h1', text: item.name});
-//     addElem({parent: card, tag: 'img', src: item.imageUrl});
-//     addElem({parent: card, tag: 'p', text: item.description});
+        //     addElem({parent: card, tag: 'div', text: item.price+' €', class:['price']});
+        //     addElem({parent: card, tag: 'button', text: "Ajouter au Panier", addPanier: {item, select}});
+        // }
+        // // x2 car x2 c'est toujours mieux !!!!
+        // for(let item of response){
+        //     let card = addElem({parent: content, tag: 'div', class:['card']});
 
-//     let select = addElem({parent: card, tag: 'select', name: 'Optique'});
-//     for (let i in item.lenses) {
-//         addElem({parent: select, tag: 'option', value: item.lenses[i], text: item.lenses[i]});
-//     }
-    
-//     addElem({parent: card, tag: 'div', text: item.price+' €', class:['price']});
-//     addElem({parent: card, tag: 'button', text: "Ajouter au Panier", addPanier: {item, select}});
-// }
-// -------------------Fin - Version Fabiche ! -----------------------//
+        //     addElem({parent: card, tag: 'h1', text: item.name});
+        //     addElem({parent: card, tag: 'img', src: item.imageUrl});
+        //     addElem({parent: card, tag: 'p', text: item.description});
+
+        //     let select = addElem({parent: card, tag: 'select', name: 'Optique'});
+        //     for (let i in item.lenses) {
+        //         addElem({parent: select, tag: 'option', value: item.lenses[i], text: item.lenses[i]});
+        //     }
+
+        //     addElem({parent: card, tag: 'div', text: item.price+' €', class:['price']});
+        //     addElem({parent: card, tag: 'button', text: "Ajouter au Panier", addPanier: {item, select}});
+        // }
+        // -------------------Fin - Version Fabiche ! -----------------------//
     }
 };
 request.open("GET", "http://localhost:3000/api/cameras");
