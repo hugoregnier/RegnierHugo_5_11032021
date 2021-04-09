@@ -11,6 +11,7 @@
 }
 h1 {
     text-align: center;
+    color: violet;
 }
 
 .card {
@@ -28,7 +29,9 @@ h1 {
     width: 100%;
 }
 .button {
-    height: 50px;
+    height: 38px;
+    margin-bottom: 5px;
+    margin-top: 5px;
     border-radius: 25px;
     background-color: thistle;
 }
@@ -59,6 +62,21 @@ h1 {
     width: 400px;
 }
 .totalWrapper {
+    display: flex;
+    align-items: baseline;
     border: dashed 2px;
     margin: 40px;
+    text-decoration: underline 3px violet;
+}
+#totalPanier {
+    margin-left: 10px;
+    font-size: 40px;
+}
+#formWrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.inputWrapper {
+    margin-bottom: 15px;
 }
