@@ -18,7 +18,7 @@ for (let i in panier) {
     let price = document.getElementById('prix');
     let prix = document.createElement('h2');
     prix.innerText = panier[i].price + (' €');
-    total += panier[i].price; //----  Prix total avec += / le parseInt transforme en nombre sans virgule ----//
+    total += panier[i].price; //----  Prix total avec += / le 'parseInt' transforme en nombre sans virgule ----//
 
     let supprime = document.getElementById('supprimer');
     let button = document.createElement('button');
@@ -45,6 +45,7 @@ for (let i in panier) {
 
 let totalPrice = document.getElementById('totalPanier');
 totalPrice.innerText = total + " €";
+
 //----fonction Regex : nom,prénom,ville / expression régulière ----//
 function validateText(value) {
     return /[a-zA-Z]+/.test(value);

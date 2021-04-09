@@ -2,8 +2,6 @@ let id = window.location.search.substr(1).split("=")[1];
 console.log(id);
 let item;
 
-// let panier = Array();
-
 // --------Requête pour l'API---------------//
 let request = new XMLHttpRequest();
 request.onreadystatechange = function() {

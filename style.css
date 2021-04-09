@@ -24,7 +24,6 @@ h1 {
 .card:hover {
     box-shadow: 3px 5px 20px #555;
 }
-
 .card img {
     width: 100%;
 }
