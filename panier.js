@@ -5,6 +5,7 @@ if (!panier) {
 
 let total = 0;
 
+
 for (let i in panier) {
 
     let name = document.getElementById('name');
@@ -65,6 +66,43 @@ function validateEmail(value) {
         return true;
     }
 }
-//---- button de validation de commande(fonction / if) ----//
+// ---- button de validation de commande(fonction / if) ----//
 
+let commander = document.getElementById('commander');
+commander.addEventListener('click', function () {
+    if (validateText(document.getElementById('lastNameInput').value)) {
+        if (validateAdresse(document.getElementById('adresseInput').value)) {
+            if (validateEmail(document.getElementById('mailInput').value)) {
+                console.log('commander');
 
+                let jsonbody = new Object();
+                jsonbody.contact = new Object();
+                jsonbody.contact.firstName = 'coucou'; // ---- remplir avec les DOM ----//
+                jsonbody.contact.lastName = 'ff'
+                jsonbody.contact.address = 'mm'
+                jsonbody.contact.city = 'jlkjlkj'
+                jsonbody.contact.email = 'klk@df.com'
+                jsonbody.products = [];
+
+                var request = new XMLHttpRequest();
+                request.onreadystatechange = function () {
+                    if (this.readyState == XMLHttpRequest.DONE && this.status == 201) {
+                        let response = JSON.parse(this.responseText);
+                        console.log(response);
+                    }
+                }
+                request.open("POST", "http://localhost:3000/api/cameras/order");
+                request.setRequestHeader("Content-Type", "application/json");
+                request.send(JSON.stringify(jsonbody));
+            } else {
+                document.getElementById('mailInput').style["border-color"] = 'red';
+                console.log('email non valide');
+            }
+        } else {
+            console.log('adresse non valide');
+        }
+    } else {
+        console.log('text invalide');
+    }
+
+});
