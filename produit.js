@@ -1,4 +1,4 @@
-let id = window.location.search.substr(1).split("=")[1];
+let id = window.location.search.substr(1).split("=")[1]; //------------- on récupère l'information ---------------//
 console.log(id);
 let item;
 

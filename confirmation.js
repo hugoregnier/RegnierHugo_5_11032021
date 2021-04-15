@@ -1,2 +1,5 @@
-let id = window.location.search.substr(1).split("=")[1];
-console.log(id);
+let orderId = window.location.search.substr(1).split("=")[1];
+
+let content = document.getElementById('content');
+ content.innerText = orderId;
+

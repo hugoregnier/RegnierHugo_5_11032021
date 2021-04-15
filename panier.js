@@ -89,6 +89,7 @@ commander.addEventListener('click', function () {
                     if (this.readyState == XMLHttpRequest.DONE && this.status == 201) {
                         let response = JSON.parse(this.responseText);
                         console.log(response);
+                        window.location.href="./confirmation.html?id="+ response.orderId
                     }
                 }
                 request.open("POST", "http://localhost:3000/api/cameras/order");
