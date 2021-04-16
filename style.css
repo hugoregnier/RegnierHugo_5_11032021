@@ -9,6 +9,10 @@
     padding: 0 2%;
     margin-bottom: 60px;
 }
+#contentProduit {
+    display: flex;
+    justify-content: center;
+}
 h1 {
     text-align: center;
     color: violet;
@@ -18,16 +22,22 @@ h1 {
     width: 400px;
     margin: 10px;
     border: solid 1px;
-    
     cursor: pointer;
+}
+.cardProduit {
+    width: 1000px;
+    margin: 10px;
+    border: solid 1px;
+    cursor: pointer;
+    text-align: center;
 }
 .card:hover {
     box-shadow: 3px 5px 20px #555;
 }
-.card img {
+.card img, .cardProduit img {
     width: 100%;
 }
-.button {
+.button, #commander {
     height: 38px;
     margin-bottom: 5px;
     margin-top: 5px;
@@ -36,6 +46,9 @@ h1 {
 }
 .price {
     text-align: center;
+}
+.validImg {
+    width: 100px;
 }
 .titlePanier {
     display: flex;
@@ -93,4 +106,5 @@ h1 {
 .confirmElement {
     text-align: center;
     font-size: 28px;
+    margin-top: 200px;
 }

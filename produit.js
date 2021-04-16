@@ -8,10 +8,10 @@ request.onreadystatechange = function() {
     if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
          item = JSON.parse(this.responseText);     
 //------------- Création d'éléments  ---------------//
-            let content = document.getElementById('content');
+            let content = document.getElementById('contentProduit');
             
             let card = document.createElement('div');
-            card.classList.add("card");
+            card.classList.add("cardProduit");
             // card.addEventListener('click', function() { alert(item.name)});
 
             let title = document.createElement('h1');

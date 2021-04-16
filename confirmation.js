@@ -7,7 +7,7 @@ for (let i in panier) {  //---- refait une boucle for pour le total----//
 }
 
 
-let content = document.getElementById('content');
+let content = document.getElementById('contentConfirmation');
 content.innerText = 'Nous vous remercions pour votre commande N°' + orderId;
  
 let totalPrice = document.getElementById('totalPanier');
