@@ -67,6 +67,9 @@ h1 {
     margin: 40px;
     text-decoration: underline 3px violet;
 }
+.totalWrapper > h3 {
+    text-align: center;
+}
 #totalPanier {
     margin-left: 10px;
     font-size: 40px;
@@ -85,5 +88,9 @@ h1 {
 }
 .buttonCommander {
     text-align: center;
-    margin-top: 20px;
+    margin: 40px auto;
+}
+.confirmElement {
+    text-align: center;
+    font-size: 28px;
 }
