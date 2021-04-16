@@ -77,5 +77,13 @@ h1 {
     align-items: center;
 }
 .inputWrapper {
-    margin-bottom: 15px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.buttonCommander {
+    text-align: center;
+    margin-top: 20px;
 }

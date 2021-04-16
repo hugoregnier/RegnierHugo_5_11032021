@@ -77,11 +77,11 @@ commander.addEventListener('click', function () {
 
                 let jsonbody = new Object();
                 jsonbody.contact = new Object();
-                jsonbody.contact.firstName = 'coucou'; // ---- remplir avec les DOM ----//
-                jsonbody.contact.lastName = 'ff'
-                jsonbody.contact.address = 'mm'
-                jsonbody.contact.city = 'jlkjlkj'
-                jsonbody.contact.email = 'klk@df.com'
+                jsonbody.contact.firstName = document.getElementById('firstNameInput').value; // ---- remplir avec les DOM ----//
+                jsonbody.contact.lastName = document.getElementById('lastNameInput').value
+                jsonbody.contact.address = document.getElementById('adresseInput').value
+                jsonbody.contact.city = document.getElementById('cityInput').value
+                jsonbody.contact.email = document.getElementById('mailInput').value
                 jsonbody.products = [];
 
                 var request = new XMLHttpRequest();
@@ -100,9 +100,13 @@ commander.addEventListener('click', function () {
                 console.log('email non valide');
             }
         } else {
+            document.getElementById('adresseInput').style["border-color"] = 'red';
             console.log('adresse non valide');
         }
     } else {
+        document.getElementById('lastNameInput').style["border-color"] = 'red';
+        document.getElementById('firstNameInput').style["border-color"] = 'red';
+        document.getElementById('cityInput').style["border-color"] = 'red';
         console.log('text invalide');
     }
 
