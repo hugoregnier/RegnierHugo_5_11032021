@@ -5,6 +5,17 @@ if (!panier) {
 
 let total = 0;
 
+function refreshTotal() {
+    total = 0;
+
+    for (let i in panier) {  
+        total += panier[i].price;
+    }
+    let totalPrice = document.getElementById('totalPanier');
+    totalPrice.innerText = total + " €"; //----  Prix total avec += / le 'parseInt' transforme en nombre sans virgule ----//
+
+}
+
 
 for (let i in panier) {
 
@@ -19,7 +30,6 @@ for (let i in panier) {
     let price = document.getElementById('prix');
     let prix = document.createElement('h2');
     prix.innerText = panier[i].price + (' €');
-    total += panier[i].price; //----  Prix total avec += / le 'parseInt' transforme en nombre sans virgule ----//
 
     let supprime = document.getElementById('supprimer');
     let button = document.createElement('button');
@@ -33,6 +43,7 @@ for (let i in panier) {
         panier.splice(i, 1); //---- On Supprime un élément dans l'array avec splice ----//
         console.log(panier);
         localStorage.setItem('panier', JSON.stringify(panier)); //---- On remet à jour le localStorage après une suppression ----//
+        refreshTotal();
     });
 
 
@@ -43,9 +54,7 @@ for (let i in panier) {
 
 
 }
-
-let totalPrice = document.getElementById('totalPanier');
-totalPrice.innerText = total + " €";
+refreshTotal();
 
 //----fonction Regex : nom,prénom,ville / expression régulière ----//
 function validateText(value) {
