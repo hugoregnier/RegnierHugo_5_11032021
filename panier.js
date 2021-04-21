@@ -8,7 +8,7 @@ let total = 0;
 function refreshTotal() {
     total = 0;
 
-    for (let i in panier) {  
+    for (let i in panier) {
         total += panier[i].price;
     }
     let totalPrice = document.getElementById('totalPanier');
@@ -98,7 +98,7 @@ commander.addEventListener('click', function () {
                     if (this.readyState == XMLHttpRequest.DONE && this.status == 201) {
                         let response = JSON.parse(this.responseText);
                         console.log(response);
-                        window.location.href="./confirmation.html?id="+ response.orderId
+                        window.location.href = "./confirmation.html?id=" + response.orderId
                     }
                 }
                 request.open("POST", "http://localhost:3000/api/cameras/order");
