@@ -23,7 +23,7 @@ for (let i in panier) {
 
     let supprime = document.getElementById('supprimer');
     let button = document.createElement('button');
-    button.classList.add("button");
+    button.classList.add("buttonSup");
     button.innerText = "Supprimer du Panier";
     button.addEventListener('click', function () {
         name.removeChild(title);

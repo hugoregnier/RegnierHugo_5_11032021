@@ -17,55 +17,55 @@
   <body>
     <header>
       <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg bg-dark">
+      <nav class="navbar navbar-expand-lg navbar-light bg-dark">
         <a class="mr-auto text-decoration-none" href="index.html"
           ><img src="img/orinoco.png"
         /></a>
-        <div class="container-fluid">
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-mdb-toggle="collapse"
-            data-mdb-target="#navbarExample01"
-            aria-controls="navbarExample01"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <i class="fas fa-bars text-white"></i>
-          </button>
-          <div
-            class="collapse navbar-collapse justify-content-end"
-            id="navbarExample01"
-          >
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" href="index.html">Accueil</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="confirmation.html">Confirmation</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarText"
+          aria-controls="navbarText"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-bars text-white"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link text-white" href="index.html"
+                >Accueil <span class="sr-only">(current)</span></a
+              >
             </li>
-              <li class="nav-item">
-                <a class="nav-link" href="panier.html">
-                  <span><i class="fas fa-shopping-cart"></i></span>
-                </a>
-              </li>
-            </ul>
-          </div>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="confirmation.html"
+                >Confirmation</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="panier.html"
+                ><span><i class="fas fa-shopping-cart"></i></span
+              ></a>
+            </li>
+          </ul>
         </div>
       </nav>
     </header>
     <main>
       <div class="confirmElement">
         <h1>Confirmation de votre commande</h1>
-        <img class="validImg" src="https://media.istockphoto.com/illustrations/validate-icon-special-purple-round-button-illustration-id865366182?k=6&m=865366182&s=170667a&w=0&h=Qyvk4yQGR5mr2ZC2bemXhY0KvkiiANepBT9QuWa-C3A=">
+        <img
+          class="validImg"
+          src="https://media.istockphoto.com/illustrations/validate-icon-special-purple-round-button-illustration-id865366182?k=6&m=865366182&s=170667a&w=0&h=Qyvk4yQGR5mr2ZC2bemXhY0KvkiiANepBT9QuWa-C3A="
+        />
         <div id="contentConfirmation"></div>
         <div id="totalPanier"></div>
       </div>
     </main>
 
-    <footer class="text-center text-white fixed-bottom bg-dark">
-      <div class="text-center p-3">© 2021 Copyright</div>
-    </footer>
+    <footer class="blockquote-footer bg-dark text-white text-center">2021 Copyright <cite title="Source Title">OpenClassRoom</cite></footer>
 
     <!-- script ajouter du cours bootstrap -->
     <script
