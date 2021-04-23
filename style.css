@@ -15,7 +15,7 @@
 }
 h1 {
     text-align: center;
-    color: violet;
+    color: #ee82ee;
 }
 
 .card {
@@ -54,7 +54,7 @@ h1 {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    text-decoration: underline 3px violet;
+    text-decoration: underline 3px #ee82ee;
 }
 .productPanier {
     display: flex;
@@ -78,7 +78,7 @@ h1 {
     align-items: baseline;
     border: dashed 2px;
     margin: 40px;
-    text-decoration: underline 3px violet;
+    text-decoration: underline 3px #ee82ee;
 }
 .totalWrapper > h3 {
     text-align: center;

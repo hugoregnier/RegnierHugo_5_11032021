@@ -3,9 +3,10 @@ let request = new XMLHttpRequest();
 request.onreadystatechange = function () {
     if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
         let response = JSON.parse(this.responseText);
+        // console.log(request);
         //------------- Boucle sur la réponse de l'api ---------------//
         for (let item of response) {
-            //------------- Création d'éléments  ---------------//
+            //------------- Création d'éléments avec le DOM ---------------//
             let content = document.getElementById('content');
 
             let card = document.createElement('div');

@@ -1,18 +1,18 @@
 let id = window.location.search.substr(1).split("=")[1]; //------------- on récupère l'information ---------------//
 console.log(id);
+
 let item;
 
 // --------Requête pour l'API---------------//
 let request = new XMLHttpRequest();
 request.onreadystatechange = function() {
     if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
-         item = JSON.parse(this.responseText);     
+         item = JSON.parse(this.responseText);
 //------------- Création d'éléments  ---------------//
             let content = document.getElementById('contentProduit');
             
             let card = document.createElement('div');
             card.classList.add("cardProduit");
-            // card.addEventListener('click', function() { alert(item.name)});
 
             let title = document.createElement('h1');
             title.innerText = item.name;
@@ -43,7 +43,6 @@ request.onreadystatechange = function() {
             button.addEventListener('click', function () {
             addPanier(select);// -------------------je récupère la valeur de select  donc la lense -----------------------//
             alert("l'appareil photo " + item.name + " à bien été ajouté au panier")});
-            
             console.log(button);
 
 
