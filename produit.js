@@ -29,7 +29,6 @@ request.onreadystatechange = function() {
 
             for (let i in item.lenses) {
                 let option = document.createElement('option');
-                // option.value = i;
                 option.innerText = item.lenses[i];
                 select.appendChild(option);
             }

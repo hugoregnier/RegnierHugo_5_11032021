@@ -13,7 +13,6 @@ function refreshTotal() {
     }
     let totalPrice = document.getElementById('totalPanier');
     totalPrice.innerText = total + " €"; //----  Prix total avec += / le 'parseInt' transforme en nombre sans virgule ----//
-
 }
 
 
@@ -51,8 +50,6 @@ for (let i in panier) {
     focale.appendChild(optique);
     price.appendChild(prix);
     supprime.appendChild(button);
-
-
 }
 refreshTotal();
 
@@ -118,5 +115,4 @@ commander.addEventListener('click', function () {
         document.getElementById('cityInput').style["border-color"] = 'red';
         console.log('text invalide');
     }
-
 });

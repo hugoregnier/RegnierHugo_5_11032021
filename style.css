@@ -25,8 +25,8 @@ h1 {
     cursor: pointer;
 }
 .cardProduit {
-    width: 1000px;
-    margin: 10px;
+    width: 800px;
+    margin: 50px;
     border: solid 1px;
     cursor: pointer;
     text-align: center;
@@ -106,7 +106,7 @@ h1 {
 .confirmElement {
     text-align: center;
     font-size: 28px;
-    margin-top: 200px;
+    margin-top: 100px;
 }
 .buttonSup {
     height: 38px;
