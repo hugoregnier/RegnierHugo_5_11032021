@@ -5,17 +5,18 @@ if (!panier) {
 
 let total = 0;
 
+//----  On calcul le montant total du panier et on l'initialise quand il y a une suppression ----//
 function refreshTotal() {
     total = 0;
 
     for (let i in panier) {
-        total += panier[i].price;
+        total += panier[i].price; //----  Prix total avec += ----//
     }
     let totalPrice = document.getElementById('totalPanier');
-    totalPrice.innerText = total + " €"; //----  Prix total avec += / le 'parseInt' transforme en nombre sans virgule ----//
+    totalPrice.innerText = total + " €";
 }
 
-
+//----  On boucle sur tout nos éléments  pour l'afficher dans le panier ----//
 for (let i in panier) {
 
     let name = document.getElementById('name');
